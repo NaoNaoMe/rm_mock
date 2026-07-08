@@ -1,0 +1,3 @@
+test_count,0xfef00014,0,4
+isCountUp,0xfef00018,0,1
+isResetRquested,0xfef0000c,0,1

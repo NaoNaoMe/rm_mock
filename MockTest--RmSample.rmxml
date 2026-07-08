@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<ViewSetting xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DataSetting>
+    <Group>1:Mock</Group>
+    <Check>true</Check>
+    <Symbol>test_count</Symbol>
+    <Address>0xfef00014</Address>
+    <Offset>0</Offset>
+    <Size>4</Size>
+    <Type>Dec</Type>
+    <Description>Free-running counter (advances ~1/ms while isCountUp != 0)</Description>
+  </DataSetting>
+  <DataSetting>
+    <Check>true</Check>
+    <Symbol>isCountUp</Symbol>
+    <Address>0xfef00018</Address>
+    <Offset>0</Offset>
+    <Size>1</Size>
+    <Type>Hex</Type>
+    <WriteValue>01</WriteValue>
+    <Description>Gate for test_count: 01 = count, 00 = freeze</Description>
+  </DataSetting>
+  <DataSetting>
+    <Check>true</Check>
+    <Symbol>isResetRquested</Symbol>
+    <Address>0xfef0000c</Address>
+    <Offset>0</Offset>
+    <Size>1</Size>
+    <Type>Hex</Type>
+    <Description>Reset request flag (held in the mock address space)</Description>
+  </DataSetting>
+  <DataSetting>
+    <Check>false</Check>
+    <Offset>0</Offset>
+    <Size>1</Size>
+    <Type>Hex</Type>
+  </DataSetting>
+  <DataSetting>
+    <Check>false</Check>
+    <Symbol>isCountUp</Symbol>
+    <Address>0xfef00018</Address>
+    <Offset>0</Offset>
+    <Size>1</Size>
+    <Name>CountEnable</Name>
+    <Type>Hex</Type>
+    <WriteValue>01</WriteValue>
+    <Description>Macro: write isCountUp = 1 (resume counting)</Description>
+  </DataSetting>
+  <DataSetting>
+    <Check>false</Check>
+    <Symbol>isCountUp</Symbol>
+    <Address>0xfef00018</Address>
+    <Offset>0</Offset>
+    <Size>1</Size>
+    <Name>CountDisable</Name>
+    <Type>Hex</Type>
+    <WriteValue>00</WriteValue>
+    <Description>Macro: write isCountUp = 0 (freeze counting)</Description>
+  </DataSetting>
+</ViewSetting>
